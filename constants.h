@@ -33,6 +33,8 @@
 #define FB_CMD_RESIZE_PARTITION "resize-logical-partition"
 #define FB_CMD_UPDATE_SUPER "update-super"
 #define FB_CMD_OEM "oem"
+#define FB_CMD_VIVO "vivo_bsp"
+#define FB_CMD_BBK "bbk"
 #define FB_CMD_GSI "gsi"
 #define FB_CMD_SNAPSHOT_UPDATE "snapshot-update"
 #define FB_CMD_FETCH "fetch"

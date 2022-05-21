@@ -81,6 +81,8 @@ FastbootDevice::FastbootDevice()
               {FB_CMD_RESIZE_PARTITION, ResizePartitionHandler},
               {FB_CMD_UPDATE_SUPER, UpdateSuperHandler},
               {FB_CMD_OEM, OemCmdHandler},
+              {FB_CMD_VIVO, OemCmdHandler},
+              {FB_CMD_BBK, OemCmdHandler},
               {FB_CMD_GSI, GsiHandler},
               {FB_CMD_SNAPSHOT_UPDATE, SnapshotUpdateHandler},
               {FB_CMD_FETCH, FetchHandler},
@@ -200,6 +202,12 @@ void FastbootDevice::ExecuteCommands() {
         if (android::base::StartsWith(command, "oem ")) {
             args = {command};
             cmd_name = FB_CMD_OEM;
+        } else if (android::base::StartsWith(command, "vivo_bsp ")) {
+            args = {command};
+            cmd_name = FB_CMD_VIVO;
+        } else if (android::base::StartsWith(command, "bbk ")) {
+            args = {command};
+            cmd_name = FB_CMD_BBK;
         } else {
             args = android::base::Split(command, ":");
             cmd_name = args[0];

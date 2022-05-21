@@ -2208,6 +2208,10 @@ int FastBootTool::Main(int argc, char* argv[]) {
             fb->Upload(filename);
         } else if (command == FB_CMD_OEM) {
             do_oem_command(FB_CMD_OEM, &args);
+        } else if (command == FB_CMD_VIVO) {
+            do_oem_command(FB_CMD_VIVO, &args);
+        } else if (command == FB_CMD_BBK) {
+            do_oem_command(FB_CMD_BBK, &args);
         } else if (command == "flashing") {
             if (args.empty()) {
                 syntax_error("missing 'flashing' command");
